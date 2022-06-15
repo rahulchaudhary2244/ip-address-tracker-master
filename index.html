@@ -30,10 +30,54 @@
 			crossorigin=""
 		></script>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Frontend Mentor | IP Address Tracker</title>
 	</head>
 	<body>
-		<div>
+		<div class="app-container">
+			<div class="form-container">
+				<div class="form-elements">
+					<label class="form-heading" for="ip-input">IP Address Tracker</label>
+					<div class="input-group input-group-lg">
+						<input
+							id="ip-input"
+							type="text"
+							class="form-control"
+							placeholder="Search for any IP address or domain"
+							aria-label="Search for any IP address or domain"
+							aria-describedby="basic-addon2"
+						/>
+						<button class="btn btn-dark arrow-btn" type="button">
+							<img src="images/icon-arrow.svg" alt="" />
+						</button>
+					</div>
+				</div>
+				<div class="info-container">
+					<div class="row">
+						<div class="col-sm-3 col-12 partition">
+							<div class="info-heading">IP Address</div>
+							<div class="info-detail">192.212.174.101</div>
+						</div>
+						<div class="col-sm-3 col-12 partition">
+							<div class="info-heading">Location</div>
+							<div class="info-detail">Brooklyn, NY 10001</div>
+						</div>
+						<div class="col-sm-3 col-12 partition">
+							<div class="info-heading">Timezone</div>
+							<div class="info-detail">UTC -05:00</div>
+						</div>
+						<div class="col-sm-3 col-12">
+							<div class="info-heading">ISP</div>
+							<div class="info-detail">SpaceX Starlink</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div id="map"></div>
 		</div>
 		<footer class="attribution">
