@@ -1,0 +1,17 @@
+body {
+	margin: 0px;
+}
+.attribution {
+	background-color: rgba(131, 14, 185, 0.616);
+	text-align: center;
+	color: white;
+	padding: 0.313rem;
+	font-size: medium;
+	font-style: italic;
+}
+
+.attribution a {
+	font-style: normal;
+	color: rgb(7, 9, 39);
+	text-transform: capitalize;
+}
