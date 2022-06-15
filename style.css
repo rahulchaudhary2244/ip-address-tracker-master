@@ -9,9 +9,12 @@ body {
 	font-size: medium;
 	font-style: italic;
 }
-
 .attribution a {
 	font-style: normal;
 	color: rgb(7, 9, 39);
 	text-transform: capitalize;
+}
+
+#map {
+	height: 180px;
 }
