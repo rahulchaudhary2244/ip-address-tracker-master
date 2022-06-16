@@ -52,7 +52,11 @@
 							aria-label="Search for any IP address or domain"
 							aria-describedby="basic-addon2"
 						/>
-						<button class="btn btn-dark arrow-btn" type="button">
+						<button
+							class="btn btn-dark arrow-btn"
+							type="button"
+							id="search-btn"
+						>
 							<img src="images/icon-arrow.svg" alt="" />
 						</button>
 					</div>
@@ -61,24 +65,30 @@
 					<div class="row">
 						<div class="col-sm-3 col-12 partition">
 							<div class="info-heading">IP Address</div>
-							<div class="info-detail">192.212.174.101</div>
+							<div class="info-detail" id="info-detail-ip">192.212.174.101</div>
 						</div>
 						<div class="col-sm-3 col-12 partition">
 							<div class="info-heading">Location</div>
-							<div class="info-detail">Brooklyn, NY 10001</div>
+							<div class="info-detail" id="info-detail-location">
+								Brooklyn, NY 10001
+							</div>
 						</div>
 						<div class="col-sm-3 col-12 partition">
 							<div class="info-heading">Timezone</div>
-							<div class="info-detail">UTC -05:00</div>
+							<div class="info-detail" id="info-detail-timezone">
+								UTC -05:00
+							</div>
 						</div>
 						<div class="col-sm-3 col-12">
 							<div class="info-heading">ISP</div>
-							<div class="info-detail">SpaceX Starlink</div>
+							<div class="info-detail" id="info-detail-isp">
+								SpaceX Starlink
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="map"></div>
+			<div id="display-map"></div>
 		</div>
 		<footer class="attribution">
 			Challenge by

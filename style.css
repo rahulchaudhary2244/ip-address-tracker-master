@@ -15,7 +15,7 @@ body {
 	text-transform: capitalize;
 }
 
-#map {
+#display-map {
 	min-height: 100%;
 }
 .app-container {
