@@ -1,5 +1,5 @@
 body {
-	margin: 0px;
+	margin: 0;
 }
 .attribution {
 	background-color: rgba(131, 14, 185, 0.616);
@@ -16,7 +16,7 @@ body {
 }
 
 #display-map {
-	height: 562px;
+	height: 35.125rem;
 }
 .app-container {
 	width: 100%;
@@ -25,7 +25,7 @@ body {
 	padding: 0;
 }
 .form-container {
-	background: linear-gradient(70deg, #1a4df34f, #fdfdfd0a),
+	background: linear-gradient(70deg, #9c1af333, #fdfdfd11),
 		url(images/pattern-bg.png) no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -35,17 +35,17 @@ body {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	min-height: 180px;
+	min-height: 11.25rem;
 }
 .info-container {
 	position: relative;
 	z-index: 1000;
 	background: white;
-	border-radius: 15px;
-	padding: 20px;
-	min-height: 100px;
-	margin: 20px 10% -75px 10%;
-	padding: 20px 0 20px 0;
+	border-radius: 1rem;
+	padding: 1.25rem;
+	min-height: 6.25rem;
+	margin: 1.25rem 10% -4.688rem 10%;
+	padding: 1.25rem 0 1.25rem 0;
 }
 .info-data {
 	width: 100%;
@@ -56,12 +56,12 @@ body {
 	font-weight: 700;
 	letter-spacing: 1.5px;
 	opacity: 0.6;
-	padding-left: 20px;
+	padding-left: 1.25rem;
 }
 .info-detail {
 	font-size: x-large;
 	font-weight: 700;
-	padding-left: 20px;
+	padding-left: 1.25rem;
 }
 .form-heading {
 	text-transform: capitalize;
@@ -72,7 +72,7 @@ body {
 	text-align: center;
 }
 .partition {
-	border-right: 1px solid #dee2e6;
+	border-right: 0.063rem solid #dee2e6;
 }
 .input-group {
 	max-width: 42%;
@@ -86,7 +86,7 @@ body {
 }
 @media (max-width: 576px) {
 	.partition {
-		border: 0px;
+		border: 0;
 	}
 	.info-container {
 		text-align: center;
@@ -95,13 +95,13 @@ body {
 		max-width: 78%;
 	}
 	.info-container {
-		margin: 20px 10% -150px 10%;
+		margin: 1.25rem 10% -10rem 10%;
 	}
 	.info-detail {
-		padding: 0 10px 0 10px;
+		padding: 0 0.625rem 0 0.625rem;
 	}
 	.info-heading {
-		padding-top: 20px;
+		padding-top: 1.25rem;
 	}
 	#info-heading-ip {
 		padding-top: 0;
