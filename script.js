@@ -1,5 +1,5 @@
 const CURRENT_IP_URL = "https://api.ipify.org?format=json";
-const DATA_BY_IP_URL = "https://geo.ipify.org/api/v2/country";
+const DATA_BY_IP_URL = "https://geo.ipify.org/api/v2/country,city";
 const MAP = L.map("display-map", getMapOptions());
 
 function getMapOptions() {
@@ -73,9 +73,9 @@ const setDataToDOM = async (data) => {
 };
 
 const getLocationInfo = async (location) => {
-	const { country, city, region, postalCode, timezone } = location;
+	const { country, city, region, postalCode } = location;
 	return [city, region, postalCode, country]
-		.filter((x) => x.length > 0)
+		.filter((x) => x !== undefined && x.toString().length > 0)
 		.join(", ");
 };
 
