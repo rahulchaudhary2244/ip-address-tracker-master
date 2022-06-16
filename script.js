@@ -1,15 +1,20 @@
 const CURRENT_IP_URL = "https://api.ipify.org?format=json";
 const DATA_BY_IP_URL = "https://geo.ipify.org/api/v2/country";
-const MAP = L.map("display-map", {
-	center: [0, 0],
-	zoom: 0,
-	layers: [
-		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-			maxZoom: 19,
-			attribution: "© OpenStreetMap",
-		}),
-	],
-});
+const MAP = L.map("display-map", getMapOptions());
+
+function getMapOptions() {
+	const mapOptions = {
+		center: [0, 0],
+		zoomControl: false,
+		layers: [
+			L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+				maxZoom: 19,
+				attribution: "© OpenStreetMap",
+			}),
+		],
+	};
+	return mapOptions;
+}
 
 const getIP = async (url) => {
 	// const res = await fetch(url);
@@ -75,17 +80,20 @@ const getLocationInfo = async (location) => {
 };
 
 const getMarkerOptions = async (lat, lng) => {
+	const markerOptions = {
+		title: `Latitude: ${lat},  Longitude: ${lng}`,
+		icon: await getCustomMarkerIcon(),
+	};
+	return markerOptions;
+};
+
+const getCustomMarkerIcon = async () => {
 	const iconOptions = {
 		iconUrl: "images/icon-location.svg",
 		iconSize: [45, 55],
 	};
-
 	const customIcon = L.icon(iconOptions);
-	const markerOptions = {
-		title: `Latitude: ${lat},  Longitude: ${lng}`,
-		icon: customIcon,
-	};
-	return markerOptions;
+	return customIcon;
 };
 
 const updateLocationInMap = async (data, map) => {
