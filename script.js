@@ -67,7 +67,7 @@ const setDataToDOM = async (data) => {
 	document.getElementById("ip-input").value = ip;
 	document.getElementById("info-detail-ip").innerHTML = ip;
 	document.getElementById("info-detail-isp").innerHTML = isp;
-	document.getElementById("info-detail-timezone").innerHTML = timezone;
+	document.getElementById("info-detail-timezone").innerHTML = `UTC ${timezone}`;
 	document.getElementById("info-detail-location").innerHTML =
 		await getLocationInfo(location);
 };
