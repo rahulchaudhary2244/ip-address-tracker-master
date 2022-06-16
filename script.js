@@ -2,6 +2,7 @@ const CURRENT_IP_URL = "https://api.ipify.org?format=json";
 const DATA_BY_IP_URL = "https://geo.ipify.org/api/v2/country";
 const MAP = L.map("display-map", {
 	center: [0, 0],
+	zoom: 0,
 	layers: [
 		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			maxZoom: 19,
@@ -56,22 +57,47 @@ const getDataByIP = async (url, ip) => {
 
 const setDataToDOM = async (data) => {
 	const { ip, isp, location } = data;
-	const { country, city, region, postalCode, timezone } = location;
-	const locationInfo = [city, region, postalCode, country]
-		.filter((x) => x.length > 0)
-		.join(", ");
+	const { timezone } = location;
+
 	document.getElementById("ip-input").value = ip;
 	document.getElementById("info-detail-ip").innerHTML = ip;
 	document.getElementById("info-detail-isp").innerHTML = isp;
 	document.getElementById("info-detail-timezone").innerHTML = timezone;
-	document.getElementById("info-detail-location").innerHTML = locationInfo;
+	document.getElementById("info-detail-location").innerHTML =
+		await getLocationInfo(location);
+};
+
+const getLocationInfo = async (location) => {
+	const { country, city, region, postalCode, timezone } = location;
+	return [city, region, postalCode, country]
+		.filter((x) => x.length > 0)
+		.join(", ");
+};
+
+const getMarkerOptions = async (lat, lng) => {
+	const iconOptions = {
+		iconUrl: "images/icon-location.svg",
+		iconSize: [45, 55],
+	};
+
+	const customIcon = L.icon(iconOptions);
+	const markerOptions = {
+		title: `Latitude: ${lat},  Longitude: ${lng}`,
+		icon: customIcon,
+	};
+	return markerOptions;
 };
 
 const updateLocationInMap = async (data, map) => {
-	const { lat, lng } = data.location;
+	const { location } = data;
+	const { lat, lng } = location;
 	const center = [lat, lng];
+
 	map.setView(center, 13);
-	L.marker(center).addTo(map);
+
+	const marker = L.marker(center, await getMarkerOptions(lat, lng));
+	marker.bindPopup(await getLocationInfo(location)).openPopup(); // tooltip type popup on location marker
+	marker.addTo(map);
 };
 
 const init = async (curr_ip_url, data_by_ip_url, map) => {
