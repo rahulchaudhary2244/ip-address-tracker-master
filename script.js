@@ -17,47 +17,47 @@ function getMapOptions() {
 }
 
 const getIP = async (url) => {
-	// const res = await fetch(url);
-	// const data = await res.json();
-	// return data;
-	return { ip: "8.8.8.8" };
+	const res = await fetch(url);
+	const data = await res.json();
+	return data;
+	//return { ip: "8.8.8.8" };
 };
 
 const getDataByIP = async (url, ip) => {
-	// const params = new URLSearchParams();
-	// params.append("apiKey", "at_BuZcf8byFLF1NU3kdG1aWSPg1ZsB4");
-	// params.append("ipAddress", ip);
-	// const res = await fetch(`${url}?${params.toString()}`);
-	// const data = await res.json();
-	// return data;
-	return {
-		ip: "8.8.8.8",
-		location: {
-			country: "US",
-			region: "California",
-			city: "Mountain View",
-			lat: 37.40599,
-			lng: -122.078514,
-			postalCode: "94043",
-			timezone: "-07:00",
-			geonameId: 5375481,
-		},
-		domains: [
-			"0d2.net",
-			"003725.com",
-			"0f6.b0094c.cn",
-			"007515.com",
-			"0guhi.jocose.cn",
-		],
-		as: {
-			asn: 15169,
-			name: "Google LLC",
-			route: "8.8.8.0/24",
-			domain: "https://about.google/intl/en/",
-			type: "Content",
-		},
-		isp: "Google LLC",
-	};
+	const params = new URLSearchParams();
+	params.append("apiKey", "at_BuZcf8byFLF1NU3kdG1aWSPg1ZsB4");
+	params.append("ipAddress", ip);
+	const res = await fetch(`${url}?${params.toString()}`);
+	const data = await res.json();
+	return data;
+	// return {
+	// 	ip: "8.8.8.8",
+	// 	location: {
+	// 		country: "US",
+	// 		region: "California",
+	// 		city: "Mountain View",
+	// 		lat: 37.40599,
+	// 		lng: -122.078514,
+	// 		postalCode: "94043",
+	// 		timezone: "-07:00",
+	// 		geonameId: 5375481,
+	// 	},
+	// 	domains: [
+	// 		"0d2.net",
+	// 		"003725.com",
+	// 		"0f6.b0094c.cn",
+	// 		"007515.com",
+	// 		"0guhi.jocose.cn",
+	// 	],
+	// 	as: {
+	// 		asn: 15169,
+	// 		name: "Google LLC",
+	// 		route: "8.8.8.0/24",
+	// 		domain: "https://about.google/intl/en/",
+	// 		type: "Content",
+	// 	},
+	// 	isp: "Google LLC",
+	// };
 };
 
 const setDataToDOM = async (data) => {
