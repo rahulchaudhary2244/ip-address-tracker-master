@@ -42,7 +42,6 @@ body {
 	z-index: 1000;
 	background: white;
 	border-radius: 1rem;
-	padding: 1.25rem;
 	min-height: 6.25rem;
 	margin: 1.25rem 10% -4.688rem 10%;
 	padding: 1.25rem 0 1.25rem 0;
@@ -62,6 +61,7 @@ body {
 	font-size: x-large;
 	font-weight: 700;
 	padding-left: 1.25rem;
+	padding-top: 1rem;
 }
 .form-heading {
 	text-transform: capitalize;
